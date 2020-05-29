@@ -281,7 +281,7 @@ func shareUpdateHandler(ctx cli.Context) {
 		Out:          os.Stdout,
 		FileId:       args.String("fileId"),
 		PermissionId: args.String("permissionId"),
-		Role: args.String("role"),
+		Role:         args.String("role"),
 	})
 	checkErr(err)
 }
@@ -381,7 +381,7 @@ func getOauthClient(args cli.Arguments) (*http.Client, error) {
 
 	credsPath := ConfigFilePath(configDir, OauthCredentialsFilename)
 	if args.String("oauthCredentials") != "" {
-		credsPath = args.String("oauthCrendentials")
+		credsPath = args.String("oauthCredentials")
 	}
 	clientId, clientSecret, err := getOauthAppCredentials(credsPath)
 	if err != nil {
